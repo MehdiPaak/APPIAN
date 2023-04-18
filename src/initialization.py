@@ -102,7 +102,14 @@ class validate_header(BaseInterface):
         fields=[["FrameTimesStart"],
                 ["FrameDuration"],
                 ]
+        #TODO: Mehdi added thsi to test, refactor after test
+        if "FrameTimesStart" not in d.keys():
+            d["FrameTimesStart"] = [0]
 
+        if "FrameDuration" not in d.keys():
+            d["FrameDuration"] = [0]
+        # end test portion
+        
         if self.inputs.quant_method == "suv" :
             fields += [["Info","BodyWeight"],
                     ["RadioChem", "InjectedRadioactivity"],
