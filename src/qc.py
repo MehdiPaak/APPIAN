@@ -818,7 +818,8 @@ class ImageParam():
 
                     if overlay_fn != None :
                         m = get_slices(overlay_vol, dim, idx)
-                        frame[dim] = axes[dim].imshow(m.T,alpha=alpha[alpha_level], cmap=cmap2, vmin=omin, vmax=omax, interpolation='gaussian', origin='lower', animated=True)
+                        # TODO: Mehdi alpha=alpha[alpha_level]
+                        frame[dim] = axes[dim].imshow(m.T,alpha=abs(alpha[alpha_level] - 1), cmap=cmap2, vmin=omin, vmax=omax, interpolation='gaussian', origin='lower', animated=True)                        
                 return frame
 
             if self.colorbar :
