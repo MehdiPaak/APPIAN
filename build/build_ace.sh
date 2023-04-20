@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# input argument dev or prod
 cd ace
 
     if [[ "$1" == "dev" ]]
